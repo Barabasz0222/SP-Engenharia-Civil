@@ -5,7 +5,7 @@ import React from "react";
 const InicialMenuComponent = () => {
   return (
     <>
-<h1>oi</h1>
+<h1>OI</h1>
     </>
   );
 };
