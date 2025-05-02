@@ -1,0 +1,64 @@
+.container {
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+  
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 170px;
+    flex: 1;
+  }
+  
+  .tagA {
+    color: var(--white);
+    font-weight: 500;
+    font-family: roboto, sans-serif;
+    font-size: 23px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .tagA:hover {
+    color: var(--gray);
+  }
+  
+  
+  @media (max-width: 991px) {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu {
+      margin-top: 10px;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+  
+    .tagA {
+      font-size: 14px;
+    }
+  
+    .logoText {
+      font-size: 14px;
+    }
+  }

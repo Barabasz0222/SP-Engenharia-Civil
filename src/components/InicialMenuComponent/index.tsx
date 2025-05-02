@@ -1,11 +1,20 @@
 // src/components/Home.tsx
 import React from "react";
+import Header from "../Header";
+import FirstPage from "../Body/FirstPage";
+import SobreNos from "../Body/SobreNos";
+import Obras from "../Body/Obras";
+import Footer from "../Footer";
 
 
 const InicialMenuComponent = () => {
   return (
     <>
-<h1>OI</h1>
+    <Header />
+    <FirstPage />
+    <SobreNos />
+    <Obras />
+    <Footer />
     </>
   );
 };
