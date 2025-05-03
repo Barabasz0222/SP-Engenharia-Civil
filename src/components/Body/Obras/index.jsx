@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./style.module.css";
+import Image from "next/image"; // Adicionado import
 
 const slides = [
   {
@@ -26,7 +27,7 @@ const slides = [
 
 export default function Obras() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalTime = 8000; // 5 seconds
+  const intervalTime = 8000; // 8 seconds
 
   const goToSlide = (index) => {
     setCurrentIndex(index);
@@ -69,10 +70,12 @@ export default function Obras() {
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
-          <img
+          <Image
             src={slides[currentIndex].image}
             alt={`Slide ${currentIndex + 1}`}
             className={styles.carouselImage}
+            width={600} // Ajustado para corresponder ao max-width do CSS
+            height={400} // Ajuste conforme dimensões reais
           />
           <button className={styles.arrowButton} onClick={nextSlide}>
             <svg
@@ -94,7 +97,6 @@ export default function Obras() {
           <p>{slides[currentIndex].text}</p>
         </div>
       </div>
-
     </div>
   );
 }

@@ -22,7 +22,7 @@ export default function Headers() {
   return (
     <header className={styles.container}>
       <div className={styles.logoWrapper}>
-        <Image className={styles.logo} src="/logoheadersimples.png" alt="Logo" />
+        <Image className={styles.logo} src="/logoheadersimples.png" width={60} height={60} alt="Logo" />
       </div>
       <nav className={styles.menu}>
         <a

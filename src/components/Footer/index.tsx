@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-<footer>
+    <footer>
       <div id="contato" className={styles.container}>
         <h1 className={styles.title}>Contato</h1>
         <div className={styles.loc}>
@@ -16,7 +16,7 @@ export default function Footer() {
             height="450"
             style={{ border: 0 }}
             allowFullScreen
-            loading="lazy"
+            loading="eager" // Alterado para eager
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./style.module.css";
+import Image from "next/image"; // Adicionado import
 
 const slides = [
   {
@@ -47,10 +48,12 @@ export default function SobreNos() {
   return (
     <div id="sobreNos" className={styles.carouselContainer} onClick={nextSlide} style={{cursor: "pointer"}} title="Clique para avançar">
       <div className={styles.carouselContent}>
-        <img
+        <Image
           src={slides[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
           className={styles.carouselImage}
+          width={600} // Ajustado para corresponder ao max-width do CSS
+          height={400} // Ajuste conforme dimensões reais
         />
         <div className={styles.carouselText}>
           <p>{slides[currentIndex].text}</p>
