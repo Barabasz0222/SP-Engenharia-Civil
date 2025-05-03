@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import LoadingIndicator from "@/components/LoadingIndicator/LoadingIndicator";
 import "../styles/globals.css";
+import { AppProps } from "next/app";
 
 
-function MyApp({ Component, pageProps }: any) {
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 

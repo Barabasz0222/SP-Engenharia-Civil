@@ -16,10 +16,6 @@
     height: auto;
     margin-right: 10px;
   }
-  html {
-    scroll-behavior: smooth;
-  }
-  
   
   .menu {
     display: flex;

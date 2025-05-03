@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./style.module.css";
+import Image from "next/image";
 
 export default function Headers() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -21,7 +22,7 @@ export default function Headers() {
   return (
     <header className={styles.container}>
       <div className={styles.logoWrapper}>
-        <img className={styles.logo} src="/logoheadersimples.png" alt="Logo" />
+        <Image className={styles.logo} src="/logoheadersimples.png" alt="Logo" />
       </div>
       <nav className={styles.menu}>
         <a
