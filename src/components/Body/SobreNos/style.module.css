@@ -76,7 +76,23 @@
   background-color: #333;
 }
 
-/* Responsivo */
+/* Telas até 1024px (tablets e laptops menores) */
+@media (max-width: 1024px) {
+  .carouselText {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .carouselContent {
+    gap: 1.5rem;
+  }
+
+  .carouselImage {
+    max-width: 90%;
+  }
+}
+
+/* Telas até 768px (celulares grandes / tablets em modo retrato) */
 @media (max-width: 768px) {
   .carouselContent {
     flex-direction: column;
@@ -86,10 +102,32 @@
   .carouselText {
     max-width: 100%;
     font-size: 1rem;
+    padding: 0 1rem;
   }
 
   .carouselImage {
     max-width: 100%;
     height: auto;
+  }
+}
+
+/* Telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  .carouselText {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+
+  .carouselImage {
+    border-radius: 8px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+  .carouselContainer {
+    padding: 0.5rem;
   }
 }

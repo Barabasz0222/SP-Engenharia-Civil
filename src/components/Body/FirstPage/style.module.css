@@ -5,7 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Impede rolagem no container */
+  overflow: hidden;
+  padding: 20px; /* Adicionado para evitar corte lateral em telas pequenas */
+  box-sizing: border-box;
 }
 
 .content {
@@ -13,12 +15,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-height: 100vh; /* Garante que o conteúdo não exceda a altura da tela */
+  max-height: 100vh;
 }
 
 .logo {
   width: 700px;
-  max-width: 90%; /* Garante que o logo não exceda a largura da tela */
+  max-width: 90%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -40,13 +42,26 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 1024px) {
   .logo {
-    width: 60px;
+    width: 500px;
   }
 
   .contactButton {
-    font-size: 14px;
-    padding: 8px 16px;
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .logo {
+    width: 90%; /* Mantém o logo visível sem cortar */
+  }
+
+  .contactButton {
+    font-size: 16px;
+    padding: 10px 20px;
   }
 }

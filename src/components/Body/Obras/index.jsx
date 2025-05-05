@@ -45,12 +45,11 @@ export default function Obras() {
 
   useEffect(() => {
     const autoSlide = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, intervalTime);
-
+  
     return () => clearInterval(autoSlide);
-  }, [currentIndex]);
-
+  }, []);
   return (
     <div id="obras" className={styles.carouselContainer} onClick={nextSlide} style={{cursor: "pointer"}} title="Clique para avançar">
       <div className={styles.carouselContent}>

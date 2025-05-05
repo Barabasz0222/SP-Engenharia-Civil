@@ -38,12 +38,11 @@ export default function SobreNos() {
   // Set up automatic sliding with useEffect
   useEffect(() => {
     const autoSlide = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, intervalTime);
-
-    // Clean up the interval on component unmount or when currentIndex changes
+  
     return () => clearInterval(autoSlide);
-  }, [currentIndex]); // Re-run effect when currentIndex changes to reset interval
+  }, []);
 
   return (
     <div id="sobreNos" className={styles.carouselContainer} onClick={nextSlide} style={{cursor: "pointer"}} title="Clique para avançar">

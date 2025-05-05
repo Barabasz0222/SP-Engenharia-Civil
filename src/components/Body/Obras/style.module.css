@@ -1,111 +1,152 @@
 .carouselContainer {
-    height: 100vh;
-    display: flex;
-    background: linear-gradient(to right, var(--black), var(--green));
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: border-box;
-  }
-  
-  .carouselContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
-    width: 100%;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .imageWrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(to right, var(--black), var(--green));
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.carouselContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.carouselImage {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrowButton:first-child {
+  left: -50px;
+}
+
+.arrowButton:last-child {
+  right: -50px;
+}
+
+.carouselText {
+  max-width: 600px;
+  font-family: roboto, sans-serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 8px;
+}
+
+.dot {
+  height: 14px;
+  width: 14px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.active {
+  background-color: #333;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
   .carouselImage {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
+    max-width: 500px;
   }
-  
-  .arrowButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .arrowButton:first-child {
-    left: -50px;
-  }
-  
-  .arrowButton:last-child {
-    right: -50px;
-  }
-  
+
   .carouselText {
-    max-width: 600px;
-    font-family: roboto, sans-serif;
-    font-size: 1.5rem;
-    color: var(--white);
-    text-align: center;
-    margin-top: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 1.2rem;
   }
-  
-  .carouselDots {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    gap: 8px;
+
+  .arrowButton:first-child {
+    left: 0;
   }
-  
-  .dot {
-    height: 14px;
-    width: 14px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+  .arrowButton:last-child {
+    right: 0;
   }
-  
-  .active {
-    background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .carouselContent {
+    padding: 0 1rem;
   }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .carouselText {
-      font-size: 1rem;
-    }
-  
-    .carouselImage {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .arrowButton:first-child {
-      left: 10px;
-    }
-  
-    .arrowButton:last-child {
-      right: 10px;
-    }
+
+  .carouselImage {
+    max-width: 100%;
+    height: auto;
   }
+
+  .carouselText {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .arrowButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .arrowButton:first-child {
+    left: 10px;
+  }
+
+  .arrowButton:last-child {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselText {
+    font-size: 0.9rem;
+  }
+
+  .arrowButton {
+    width: 30px;
+    height: 30px;
+  }
+}
