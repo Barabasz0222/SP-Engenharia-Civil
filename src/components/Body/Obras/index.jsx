@@ -50,11 +50,13 @@ export default function Obras() {
   
     return () => clearInterval(autoSlide);
   }, []);
+
   return (
     <div id="obras" className={styles.carouselContainer} onClick={nextSlide} style={{cursor: "pointer"}} title="Clique para avançar">
+            <h2 className={styles.sectionTitle}>Obras</h2>
       <div className={styles.carouselContent}>
         <div className={styles.imageWrapper}>
-          <button className={styles.arrowButton} onClick={prevSlide}>
+          <button className={styles.arrowButton} onClick={(e) => { e.stopPropagation(); console.log("Prev button clicked"); prevSlide(); }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -73,10 +75,10 @@ export default function Obras() {
             src={slides[currentIndex].image}
             alt={`Slide ${currentIndex + 1}`}
             className={styles.carouselImage}
-            width={600} // Ajustado para corresponder ao max-width do CSS
-            height={400} // Ajuste conforme dimensões reais
+            width={600}
+            height={400}
           />
-          <button className={styles.arrowButton} onClick={nextSlide}>
+          <button className={styles.arrowButton} onClick={(e) => { e.stopPropagation(); nextSlide(); }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

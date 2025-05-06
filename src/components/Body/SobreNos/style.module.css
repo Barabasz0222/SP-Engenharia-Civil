@@ -75,6 +75,18 @@
 .active {
   background-color: #333;
 }
+.sectionTitle {
+  font-family: roboto, sans-serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  text-align: left; /* Alinha o título à esquerda */
+  margin-bottom: 2rem;
+  margin-left: 2rem; /* Espaço à esquerda para alinhamento */
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 100%; /* Garante que o título respeite o alinhamento do contêiner */
+}
 
 /* Telas até 1024px (tablets e laptops menores) */
 @media (max-width: 1024px) {
@@ -109,6 +121,10 @@
     max-width: 100%;
     height: auto;
   }
+
+  .sectionTitle {
+    font-size: 0.9rem;
+  }
 }
 
 /* Telas até 480px (celulares pequenos) */
@@ -116,6 +132,9 @@
   .carouselText {
     font-size: 0.95rem;
     padding: 0 0.5rem;
+  }
+  .sectionTitle {
+    font-size: 0.9rem;
   }
 
   .carouselImage {

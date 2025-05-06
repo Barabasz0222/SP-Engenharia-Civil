@@ -50,6 +50,7 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
+  pointer-events: auto; /* Garante que os botões recebam eventos de clique */
 }
 
 .arrowButton:first-child {
@@ -86,6 +87,18 @@
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+.sectionTitle {
+  font-family: roboto, sans-serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  text-align: left; /* Alinha o título à esquerda */
+  margin-bottom: 2rem;
+  margin-left: 2rem; /* Espaço à esquerda para alinhamento */
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 100%; /* Garante que o título respeite o alinhamento do contêiner */
 }
 
 .active {
@@ -138,6 +151,9 @@
   .arrowButton:last-child {
     right: 10px;
   }
+  .sectionTitle {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -148,5 +164,8 @@
   .arrowButton {
     width: 30px;
     height: 30px;
+  }
+  .sectionTitle {
+    font-size: 0.9rem;
   }
 }

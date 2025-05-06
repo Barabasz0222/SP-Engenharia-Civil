@@ -46,6 +46,7 @@ export default function SobreNos() {
 
   return (
     <div id="sobreNos" className={styles.carouselContainer} onClick={nextSlide} style={{cursor: "pointer"}} title="Clique para avançar">
+      <h2 className={styles.sectionTitle}>Sobre Nós</h2>
       <div className={styles.carouselContent}>
         <Image
           src={slides[currentIndex].image}

@@ -31,9 +31,9 @@ export default function Footer() {
             </p>
             <div className={styles.emailFone}>
               <IoIosMail />
-              <p>email@email.com</p>
+              <p>spengenharia25@outlook.com</p>
               <FaPhoneAlt />
-              <p>(44) 99999-9999</p>
+              <p>(44) 99954-3562</p>
             </div>
           </div>
           <div className={styles.right}>
