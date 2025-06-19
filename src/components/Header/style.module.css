@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 10px 15px;
   flex-wrap: wrap;
+    overflow-x: hidden;
 }
 
 .logoWrapper {
@@ -44,6 +45,7 @@
   .container {
     flex-direction: column;
     align-items: center;
+      overflow-x: hidden;
   }
 
   .menu {
@@ -62,6 +64,7 @@
 @media (max-width: 576px) {
   .container {
     padding: 10px;
+      overflow-x: hidden;
   }
 
   .logo {
