@@ -6,8 +6,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 20px; /* Adicionado para evitar corte lateral em telas pequenas */
+  padding: 20px;
   box-sizing: border-box;
+  max-width: 100vw;
 }
 
 .content {
@@ -43,24 +44,20 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Tablets */
 @media (max-width: 1024px) {
   .logo {
     width: 500px;
   }
-
   .contactButton {
     font-size: 18px;
     padding: 15px 25px;
   }
 }
 
-/* Celulares */
 @media (max-width: 576px) {
   .logo {
-    width: 90%; /* Mantém o logo visível sem cortar */
+    width: 90%;
   }
-
   .contactButton {
     font-size: 16px;
     padding: 10px 20px;
