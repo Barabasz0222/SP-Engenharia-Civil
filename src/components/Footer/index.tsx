@@ -16,7 +16,7 @@ export default function Footer() {
             height="450"
             style={{ border: 0 }}
             allowFullScreen
-            loading="eager" // Alterado para eager
+            loading="eager"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
@@ -30,10 +30,14 @@ export default function Footer() {
               abaixo:
             </p>
             <div className={styles.emailFone}>
-              <IoIosMail />
-              <p>spengenharia25@outlook.com</p>
-              <FaPhoneAlt />
-              <p>(44) 99954-3562</p>
+              <div className={styles.contactItem}>
+                <IoIosMail />
+                <p>spengenharia25@outlook.com</p>
+              </div>
+              <div className={styles.contactItem}>
+                <FaPhoneAlt />
+                <p>(44) 99954-3562</p>
+              </div>
             </div>
           </div>
           <div className={styles.right}>
@@ -45,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.icon}>
-          <Link href="https://www.instagram.com/">
+          <Link href="https://www.instagram.com/sp_engenhariacivil?igsh=M3AxNGVsdmxvOXJ1">
             <FaInstagram />
           </Link>
         </div>

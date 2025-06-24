@@ -59,14 +59,18 @@
 
 .emailFone {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
   margin-top: 10px;
-  flex-wrap: wrap;
-  text-decoration: none;
 }
 
-.emailFone svg {
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactItem svg {
   font-size: 1.5rem;
 }
 
@@ -116,15 +120,10 @@
   .infoContato, .infoEndereco {
     font-size: 0.95rem;
   }
-  .emailFone {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .contactItem {
+    justify-content: center;
   }
-  .emailFone p {
-    margin: 0;
-  }
-  .emailFone svg {
+  .contactItem svg {
     margin-bottom: 5px;
   }
   .icon a {

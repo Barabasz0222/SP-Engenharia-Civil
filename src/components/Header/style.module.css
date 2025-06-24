@@ -6,6 +6,11 @@
   padding: 10px 15px;
   flex-wrap: wrap;
     overflow-x: hidden;
+    position: fixed; /* Faz o header ficar fixo na tela */
+     top: 0; /* Alinha no topo */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  z-index: 1000; /* Garante que o header fique acima de outros elementos */
 }
 
 .logoWrapper {

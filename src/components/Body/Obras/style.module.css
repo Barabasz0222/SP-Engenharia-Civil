@@ -32,10 +32,11 @@
 .carouselImage {
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 400px; /* Altura fixa para consistência */
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  object-fit: cover;
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+  object-position: center; /* Centraliza a imagem */
 }
 
 .arrowButton {
@@ -120,6 +121,7 @@
 @media (max-width: 1024px) {
   .carouselImage {
     max-width: 500px;
+    height: 333px; /* Mantém proporção 3:2 */
   }
   .carouselText {
     font-size: 1.2rem;
@@ -138,7 +140,7 @@
   }
   .carouselImage {
     max-width: 100%;
-    height: auto;
+    height: auto; /* Permite altura automática para telas menores */
   }
   .carouselText {
     font-size: 1rem;
