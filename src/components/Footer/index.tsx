@@ -36,7 +36,9 @@ export default function Footer() {
               </div>
               <div className={styles.contactItem}>
                 <FaPhoneAlt />
-                <p>(44) 99954-3562</p>
+                <Link href="tel:+5544999543562" className={styles.phoneLink}>
+                  (44) 99954-3562
+                </Link>
               </div>
             </div>
           </div>

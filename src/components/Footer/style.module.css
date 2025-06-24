@@ -74,6 +74,16 @@
   font-size: 1.5rem;
 }
 
+.phoneLink {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.phoneLink:hover {
+  color: #e4405f !important;
+  text-decoration: none !important;
+}
+
 .icon {
   display: flex;
   justify-content: center;
