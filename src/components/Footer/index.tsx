@@ -3,9 +3,47 @@ import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Footer() {
   return (
+    <>
+      <Head>
+        <title>Contato - SP Engenharia Civil</title>
+        <meta
+          name="description"
+          content="Entre em contato com a SP Engenharia Civil em Mandaguari, PR, para serviços de engenharia e construção."
+        />
+        <meta
+          name="keywords"
+          content="engenharia civil, construção, Mandaguari, PR"
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "SP Engenharia Civil",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rua Padre Antônio Lock, 850",
+              "addressLocality": "Mandaguari",
+              "addressRegion": "PR",
+              "postalCode": "86975-000",
+              "addressCountry": "BR",
+            },
+            "telephone": "+5544999543562",
+            "email": "spengenharia25@outlook.com",
+          })}
+        </script>
+        <title>SP Engenharia Civil - Contato</title>
+        <meta name="description" content="Entre em contato com a SP Engenharia Civil em Mandaguari, PR, para serviços de engenharia e construção." />
+        <meta name="keywords" content="engenharia civil, construção, Mandaguari, PR, SP Engenharia" />
+        <meta name="author" content="SP Engenharia Civil" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
     <footer>
       <div id="contato" className={styles.container}>
         <h1 className={styles.title}>Contato</h1>
@@ -58,5 +96,6 @@ export default function Footer() {
         <p className={styles.copyright}>SP Engenharia Civil - 2025 © Todos os direitos reservados</p>
       </div>
     </footer>
+    </>
   );
 }
