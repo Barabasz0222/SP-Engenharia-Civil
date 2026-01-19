@@ -1,149 +1,242 @@
-.carouselContainer {
-  height: 100vh;
-  display: flex;
-  background-color: var(--black);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
-}
+/* src/components/Body/SobreNos/style.module.css */
 
-.carouselContent {
+.container {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  width: 100%;
-  gap: 2rem;
-  transition: all 0.5s ease-in-out;
-  flex-wrap: wrap; /* Para responsividade */
+  background: linear-gradient(to bottom, #1D1D1B 0%, #0f1f19 100%);
+  padding: 5rem 1rem;
+  overflow: hidden;
 }
 
-.carouselImage {
+.backgroundGradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 188, 112, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
   width: 100%;
-  max-width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 188, 112, 0.1);
+  border: 1px solid rgba(0, 188, 112, 0.3);
+  border-radius: 50px;
+  color: #00BC70;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #00BC70 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.titleUnderline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00BC70, transparent);
+  margin: 0 auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imageSection {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+  max-height: 400px;
+}
+
+.imageWrapper:hover {
+  transform: scale(1.02);
+}
+
+.image {
+  width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: block;
   object-fit: cover;
+  transition: transform 0.7s ease;
 }
 
-.carouselText {
-  flex: 1;
-  font-family: roboto, sans-serif;
-  max-width: 400px;
-  font-size: 2rem;
-  color: var(--white);
-  text-align: left;
+.imageWrapper:hover .image {
+  transform: scale(1.1);
 }
 
-.carouselButtons {
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 188, 112, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.textSection {
+  position: relative;
+  padding: 2rem;
+}
+
+.quoteIcon {
+  font-size: 6rem;
+  line-height: 1;
+  color: rgba(0, 188, 112, 0.2);
+  font-family: Georgia, serif;
+  margin-bottom: -2rem;
+  margin-left: -1rem;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: fadeIn 0.5s ease;
+}
+
+.dots {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-.carouselButtons button {
-  background-color: #222;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.carouselDots {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 8px;
+  gap: 0.75rem;
+  justify-content: flex-start;
 }
 
 .dot {
-  height: 14px;
-  width: 14px;
-  background-color: #bbb;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  padding: 0;
 }
 
-.active {
-  background-color: #333;
-}
-.sectionTitle {
-  font-family: roboto, sans-serif;
-  font-size: 1.3rem;
-  color: var(--white);
-  text-align: left; /* Alinha o título à esquerda */
-  margin-bottom: 2rem;
-  margin-left: 2rem; /* Espaço à esquerda para alinhamento */
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  width: 100%; /* Garante que o título respeite o alinhamento do contêiner */
+.dot:hover {
+  background: rgba(0, 188, 112, 0.5);
+  transform: scale(1.2);
 }
 
-/* Telas até 1024px (tablets e laptops menores) */
+.activeDot {
+  width: 40px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #00BC70, #00ff9d);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
-  .carouselText {
-    font-size: 1.4rem;
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .imageSection {
+    max-width: 600px;
+  }
+
+  .imageWrapper {
+    max-height: 450px;
+  }
+
+  .textSection {
     text-align: center;
   }
 
-  .carouselContent {
-    gap: 1.5rem;
+  .dots {
+    justify-content: center;
   }
 
-  .carouselImage {
-    max-width: 90%;
+  .quoteIcon {
+    margin-left: 0;
   }
 }
 
-/* Telas até 768px (celulares grandes / tablets em modo retrato) */
 @media (max-width: 768px) {
-  .carouselContent {
-    flex-direction: column;
-    text-align: center;
+  .container {
+    padding: 4rem 1rem;
   }
 
-  .carouselText {
-    max-width: 100%;
-    font-size: 1rem;
-    padding: 0 1rem;
+  .header {
+    margin-bottom: 3rem;
   }
 
-  .carouselImage {
-    max-width: 100%;
-    height: auto;
+  .content {
+    gap: 2rem;
   }
 
-  .sectionTitle {
-    font-size: 0.9rem;
+  .textSection {
+    padding: 1rem;
+  }
+
+  .quoteIcon {
+    font-size: 4rem;
+    margin-bottom: -1rem;
   }
 }
 
-/* Telas até 480px (celulares pequenos) */
-@media (max-width: 480px) {
-  .carouselText {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
+@media (max-width: 576px) {
+  .container {
+    padding: 3rem 1rem;
   }
 
-  .carouselImage {
-    border-radius: 8px;
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 1rem;
   }
 
-  .dot {
-    height: 10px;
-    width: 10px;
-  }
-
-  .carouselContainer {
-    padding: 0.5rem;
+  .quoteIcon {
+    font-size: 3rem;
   }
 }
