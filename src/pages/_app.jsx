@@ -1,11 +1,10 @@
+// src/pages/_app.jsx
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import LoadingIndicator from "@/components/LoadingIndicator/LoadingIndicator";
 import "../styles/globals.css";
-import { AppProps } from "next/app";
 
-
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 

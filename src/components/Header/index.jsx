@@ -1,4 +1,5 @@
-// src/components/Header/index.tsx
+// src/components/Header/index.jsx
+// USE ESTE ARQUIVO SE O .tsx ESTIVER DANDO ERRO
 import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
@@ -19,7 +20,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const handleScroll = (e, id) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {

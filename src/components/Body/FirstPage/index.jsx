@@ -1,4 +1,5 @@
-// src/components/Body/FirstPage/index.tsx
+// src/components/Body/FirstPage/index.jsx
+// USE ESTE ARQUIVO SE O .tsx ESTIVER DANDO ERRO
 import React from "react";
 import styles from "./style.module.css";
 import Image from "next/image";

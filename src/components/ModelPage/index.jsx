@@ -1,13 +1,8 @@
-// src/components/ModelPage/index.tsx
+// src/components/ModelPage/index.jsx
 import React from "react";
 import styles from "./style.module.css";
 
-interface ModelPageProps {
-  nomePagina: string;
-  content: React.ReactNode;
-}
-
-export default function ModelPage({ nomePagina, content }: ModelPageProps) {
+export default function ModelPage({ nomePagina, content }) {
   return (
     <main className={styles.main}>
       {nomePagina && (

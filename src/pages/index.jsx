@@ -1,4 +1,4 @@
-// src/pages/index.tsx
+// src/pages/index.jsx
 import ModelPage from "@/components/ModelPage";
 import InicialMenuComponent from "@/components/InicialMenuComponent";
 import Head from "next/head";
