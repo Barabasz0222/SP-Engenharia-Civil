@@ -1,1209 +1,1434 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SP Engenharia Civil oferece serviços de engenharia e construção em Mandaguari, PR. Qualidade, inovação e compromisso para seus projetos.">
-    <meta name="keywords" content="engenharia civil, construção, Mandaguari, PR, SP Engenharia, obras, projetos">
-    <meta name="author" content="SP Engenharia Civil">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SP Engenharia Civil oferece serviços de engenharia e construção em Mandaguari, PR. Qualidade, inovação e compromisso para seus projetos."
+    />
+    <meta
+      name="keywords"
+      content="engenharia civil, construção, Mandaguari, PR, SP Engenharia, obras, projetos"
+    />
+    <meta name="author" content="SP Engenharia Civil" />
     <title>SP Engenharia Civil - Excelência em Construção</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-    
+    <link rel="icon" href="favicon.ico" />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        :root {
-            --black: #1D1D1B;
-            --green: #00BC70;
-            --green-light: #00ff9d;
-            --white: #fff;
-            --gray: #CFD2D3;
-        }
+      :root {
+        --black: #1d1d1b;
+        --green: #00bc70;
+        --green-light: #00ff9d;
+        --white: #fff;
+        --gray: #cfd2d3;
+      }
 
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--black);
+        color: var(--white);
+        overflow-x: hidden;
+      }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: var(--black);
-        }
+      ::-webkit-scrollbar-track {
+        background: var(--black);
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--green), var(--green-light));
-            border-radius: 5px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--green), var(--green-light));
+        border-radius: 5px;
+      }
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background-color: rgba(29, 29, 27, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 188, 112, 0.2);
-            transition: all 0.3s ease;
-        }
+      /* Header */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: rgba(29, 29, 27, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 188, 112, 0.2);
+        transition: all 0.3s ease;
+      }
 
-        header.scrolled {
-            background-color: rgba(29, 29, 27, 0.98);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
+      header.scrolled {
+        background-color: rgba(29, 29, 27, 0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
 
-        .header-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 2rem;
-        }
+      .header-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+      }
 
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
 
-        .logo-box {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #00BC70 0%, #00ff9d 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 188, 112, 0.3);
-            transition: transform 0.3s ease;
-        }
+      .logo-box {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #00bc70 0%, #00ff9d 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 188, 112, 0.3);
+        transition: transform 0.3s ease;
+      }
 
-        .logo-box:hover {
-            transform: scale(1.05);
-        }
+      .logo-box:hover {
+        transform: scale(1.05);
+      }
 
-        .logo-box img {
-            width: 80%;
-            height: 80%;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-        }
+      .logo-box img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+      }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+      }
 
-        .company-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #fff;
-        }
+      .company-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+      }
 
-        .tagline {
-            font-size: 0.75rem;
-            color: #00BC70;
-            letter-spacing: 0.5px;
-        }
+      .tagline {
+        font-size: 0.75rem;
+        color: #00bc70;
+        letter-spacing: 0.5px;
+      }
 
-        nav {
-            display: flex;
-            gap: 3rem;
-        }
+      nav {
+        display: flex;
+        gap: 3rem;
+      }
 
-        nav a {
-            position: relative;
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            transition: color 0.3s ease;
-        }
+      nav a {
+        position: relative;
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        transition: color 0.3s ease;
+      }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #00BC70, #00ff9d);
-            transition: width 0.3s ease;
-        }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #00bc70, #00ff9d);
+        transition: width 0.3s ease;
+      }
 
-        nav a:hover {
-            color: #00BC70;
-        }
+      nav a:hover {
+        color: #00bc70;
+      }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+      nav a:hover::after {
+        width: 100%;
+      }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
 
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            width: 28px;
-        }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 28px;
+      }
 
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #fff;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
 
-        .mobile-menu {
-            display: none;
-        }
+      .mobile-menu {
+        display: none;
+      }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, #1D1D1B 0%, #0a3d2e 50%, #1D1D1B 100%);
-            padding: 20px;
-        }
+      /* Hero Section */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          #1d1d1b 0%,
+          #0a3d2e 50%,
+          #1d1d1b 100%
+        );
+        padding: 20px;
+      }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 188, 112, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 188, 112, 0.1) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(0, 188, 112, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(0, 188, 112, 0.1) 0%,
+            transparent 50%
+          );
+        animation: pulse 8s ease-in-out infinite;
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 1200px;
-            animation: fadeInUp 1s ease-out;
-        }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 1200px;
+        animation: fadeInUp 1s ease-out;
+      }
 
-        .hero-logo {
-            margin-bottom: 2rem;
-            animation: float 6s ease-in-out infinite;
-        }
+      .hero-logo {
+        margin-bottom: 2rem;
+        animation: float 6s ease-in-out infinite;
+      }
 
+      .hero-logo img {
+        width: 50%;
+        max-width: 700px;
+        height: auto;
+        filter: drop-shadow(0 10px 30px rgba(0, 188, 112, 0.3));
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .hero .highlight {
+        background: linear-gradient(135deg, #00bc70 0%, #00ff9d 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.25rem 3rem;
+        background: linear-gradient(135deg, #00bc70 0%, #00ff9d 100%);
+        color: #1d1d1b;
+        font-weight: 700;
+        font-size: 1.125rem;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 40px rgba(0, 188, 112, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .cta-btn:hover::before {
+        left: 100%;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 15px 50px rgba(0, 188, 112, 0.5);
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      .mouse {
+        width: 30px;
+        height: 50px;
+        border: 2px solid #00bc70;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        padding-top: 8px;
+      }
+
+      .wheel {
+        width: 4px;
+        height: 10px;
+        background: #00bc70;
+        border-radius: 2px;
+        animation: scroll 2s infinite;
+      }
+
+      /* Section Styles */
+      section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 5rem 1rem;
+        overflow: hidden;
+      }
+
+      .section-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background: rgba(0, 188, 112, 0.1);
+        border: 1px solid rgba(0, 188, 112, 0.3);
+        border-radius: 50px;
+        color: #00bc70;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+      }
+
+      .section-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, #fff 0%, #00bc70 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+
+      .title-underline {
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, #00bc70, transparent);
+        margin: 0 auto;
+      }
+
+      /* About Section */
+      #sobre {
+        background: linear-gradient(to bottom, #1d1d1b 0%, #0f1f19 100%);
+      }
+
+      .about-bg {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 30% 50%,
+          rgba(0, 188, 112, 0.08) 0%,
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        gap: 3rem;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .about-image-section {
+        position: relative;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .about-image-wrapper {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        max-height: 400px;
+        transition: transform 0.5s ease;
+      }
+
+      .about-image-wrapper:hover {
+        transform: scale(1.02);
+      }
+
+      .about-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+      }
+
+      .about-image-wrapper:hover img {
+        transform: scale(1.1);
+      }
+
+      .about-text-section {
+        position: relative;
+        padding: 2rem;
+      }
+
+      .quote-icon {
+        font-size: 6rem;
+        line-height: 1;
+        color: rgba(0, 188, 112, 0.2);
+        font-family: Georgia, serif;
+        margin-bottom: -2rem;
+        margin-left: -1rem;
+      }
+
+      .about-text {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .dots {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .dot:hover {
+        background: rgba(0, 188, 112, 0.5);
+        transform: scale(1.2);
+      }
+
+      .dot.active {
+        width: 40px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #00bc70, #00ff9d);
+      }
+
+      /* Works Section */
+      #obras {
+        background: linear-gradient(
+          135deg,
+          #1d1d1b 0%,
+          #0a3d2e 50%,
+          #1d1d1b 100%
+        );
+      }
+
+      .works-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(0, 188, 112, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 30% 70%,
+            rgba(0, 188, 112, 0.1) 0%,
+            transparent 50%
+          );
+        animation: pulse 8s ease-in-out infinite;
+      }
+
+      .carousel-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .carousel-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .nav-btn {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 188, 112, 0.2);
+        border: 2px solid rgba(0, 188, 112, 0.5);
+        border-radius: 50%;
+        color: #00bc70;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-btn:hover {
+        background: rgba(0, 188, 112, 0.3);
+        border-color: #00bc70;
+        transform: scale(1.1);
+      }
+
+      .carousel-image-container {
+        position: relative;
+        flex: 1;
+      }
+
+      .carousel-image-wrapper {
+        position: relative;
+        aspect-ratio: 16/10;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        max-height: 500px;
+      }
+
+      .carousel-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+      }
+
+      .carousel-image-wrapper:hover img {
+        transform: scale(1.05);
+      }
+
+      .info-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.4) 30%,
+          transparent 60%
+        );
+      }
+
+      .location-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(0, 188, 112, 0.2);
+        border: 1px solid rgba(0, 188, 112, 0.4);
+        border-radius: 50px;
+        color: #00bc70;
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .project-title {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .counter {
+        text-align: center;
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+        margin-top: 1.5rem;
+      }
+
+      .counter .current {
+        color: #00bc70;
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      /* Contact Section */
+      #contato {
+        background: linear-gradient(to bottom, #0f1f19 0%, #1d1d1b 100%);
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .contact-group {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(0, 188, 112, 0.1);
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .contact-group:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(0, 188, 112, 0.2);
+        transform: translateY(-5px);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        margin-bottom: 1rem;
+      }
+
+      .contact-item:hover {
+        background: rgba(0, 188, 112, 0.1);
+        border-color: rgba(0, 188, 112, 0.3);
+        transform: translateX(5px);
+      }
+
+      .icon-wrapper {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 188, 112, 0.2),
+          rgba(0, 188, 112, 0.1)
+        );
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #00bc70;
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover .icon-wrapper {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 188, 112, 0.3),
+          rgba(0, 188, 112, 0.2)
+        );
+        transform: scale(1.1);
+      }
+
+      .contact-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .contact-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+      }
+
+      .contact-value {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      .map-wrapper {
+        width: 100%;
+        height: 500px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 188, 112, 0.2);
+      }
+
+      .map-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        border-top: 1px solid rgba(0, 188, 112, 0.2);
+      }
+
+      .divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 188, 112, 0.3),
+          transparent
+        );
+        margin-bottom: 2rem;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: rgba(29, 29, 27, 0.98);
+        border: 1px solid rgba(0, 188, 112, 0.3);
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 2000;
+      }
+
+      .mobile-menu a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+      }
+
+      @keyframes scroll {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 1440px) {
         .hero-logo img {
-            width: 50%;
-            max-width: 700px;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(0, 188, 112, 0.3));
+          max-width: 550px;
         }
-
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+          font-size: clamp(1.8rem, 4.5vw, 3rem);
         }
+      }
 
-        .hero .highlight {
-            background: linear-gradient(135deg, #00BC70 0%, #00ff9d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+      @media (max-width: 1024px) {
+        .hero-logo img {
+          max-width: 450px;
         }
-
-        .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
+        .hero h1 {
+          font-size: clamp(1.6rem, 4vw, 2.5rem);
         }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1.25rem 3rem;
-            background: linear-gradient(135deg, #00BC70 0%, #00ff9d 100%);
-            color: #1D1D1B;
-            font-weight: 700;
-            font-size: 1.125rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 40px rgba(0, 188, 112, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-btn:hover::before {
-            left: 100%;
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 50px rgba(0, 188, 112, 0.5);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .mouse {
-            width: 30px;
-            height: 50px;
-            border: 2px solid #00BC70;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            padding-top: 8px;
-        }
-
-        .wheel {
-            width: 4px;
-            height: 10px;
-            background: #00BC70;
-            border-radius: 2px;
-            animation: scroll 2s infinite;
-        }
-
-        /* Section Styles */
-        section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 5rem 1rem;
-            overflow: hidden;
-        }
-
-        .section-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background: rgba(0, 188, 112, 0.1);
-            border: 1px solid rgba(0, 188, 112, 0.3);
-            border-radius: 50px;
-            color: #00BC70;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            background: linear-gradient(135deg, #fff 0%, #00BC70 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .title-underline {
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #00BC70, transparent);
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        #sobre {
-            background: linear-gradient(to bottom, #1D1D1B 0%, #0f1f19 100%);
-        }
-
-        .about-bg {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(0, 188, 112, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            gap: 3rem;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-image-section {
-            position: relative;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .about-image-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            max-height: 400px;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image-wrapper:hover {
-            transform: scale(1.02);
-        }
-
-        .about-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .about-image-wrapper:hover img {
-            transform: scale(1.1);
-        }
-
-        .about-text-section {
-            position: relative;
-            padding: 2rem;
-        }
-
-        .quote-icon {
-            font-size: 6rem;
-            line-height: 1;
-            color: rgba(0, 188, 112, 0.2);
-            font-family: Georgia, serif;
-            margin-bottom: -2rem;
-            margin-left: -1rem;
-        }
-
-        .about-text {
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .dots {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot:hover {
-            background: rgba(0, 188, 112, 0.5);
-            transform: scale(1.2);
-        }
-
-        .dot.active {
-            width: 40px;
-            border-radius: 6px;
-            background: linear-gradient(90deg, #00BC70, #00ff9d);
-        }
-
-        /* Works Section */
-        #obras {
-            background: linear-gradient(135deg, #1D1D1B 0%, #0a3d2e 50%, #1D1D1B 100%);
-        }
-
-        .works-bg {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                radial-gradient(circle at 70% 30%, rgba(0, 188, 112, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 30% 70%, rgba(0, 188, 112, 0.1) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        .carousel-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .carousel-container {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .nav-btn {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 188, 112, 0.2);
-            border: 2px solid rgba(0, 188, 112, 0.5);
-            border-radius: 50%;
-            color: #00BC70;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-btn:hover {
-            background: rgba(0, 188, 112, 0.3);
-            border-color: #00BC70;
-            transform: scale(1.1);
-        }
-
-        .carousel-image-container {
-            position: relative;
-            flex: 1;
-        }
-
-        .carousel-image-wrapper {
-            position: relative;
-            aspect-ratio: 16/10;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            max-height: 500px;
-        }
-
-        .carousel-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .carousel-image-wrapper:hover img {
-            transform: scale(1.05);
-        }
-
-        .info-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 30%, transparent 60%);
-        }
-
-        .location-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(0, 188, 112, 0.2);
-            border: 1px solid rgba(0, 188, 112, 0.4);
-            border-radius: 50px;
-            color: #00BC70;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .project-title {
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            font-weight: 700;
-            color: #fff;
-            margin: 0;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .counter {
-            text-align: center;
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 300;
-            margin-top: 1.5rem;
-        }
-
-        .counter .current {
-            color: #00BC70;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        /* Contact Section */
-        #contato {
-            background: linear-gradient(to bottom, #0f1f19 0%, #1D1D1B 100%);
-        }
-
+        .about-content,
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
+          grid-template-columns: 1fr;
+          gap: 3rem;
         }
+        .dots {
+          justify-content: center;
+        }
+      }
+@media (max-width: 768px) {
 
-        .contact-group {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 188, 112, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
+  /* ===== HEADER / MENU ===== */
+  nav {
+    display: none;
+  }
 
-        .contact-group:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(0, 188, 112, 0.2);
-            transform: translateY(-5px);
-        }
+  .mobile-menu-btn {
+    display: block;
+  }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            margin-bottom: 1rem;
-        }
+  .logo-text {
+    display: none;
+  }
 
-        .contact-item:hover {
-            background: rgba(0, 188, 112, 0.1);
-            border-color: rgba(0, 188, 112, 0.3);
-            transform: translateX(5px);
-        }
+  /* ===== SEÇÕES GERAIS ===== */
+  .about-text-section {
+    text-align: center;
+  }
 
-        .icon-wrapper {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, rgba(0, 188, 112, 0.2), rgba(0, 188, 112, 0.1));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #00BC70;
-            transition: all 0.3s ease;
-        }
+  .quote-icon {
+    margin-left: 0;
+  }
 
-        .contact-item:hover .icon-wrapper {
-            background: linear-gradient(135deg, rgba(0, 188, 112, 0.3), rgba(0, 188, 112, 0.2));
-            transform: scale(1.1);
-        }
+  /* ===== CARROSSEL ===== */
+  .carousel-container {
+    gap: 0.5rem;
+  }
 
-        .contact-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+  }
 
-        .contact-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-        }
+  .carousel-image-wrapper {
+    max-height: 220px; /* ⬅️ diminui a imagem no mobile */
+  }
 
-        .contact-value {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #fff;
-        }
+  /* ===== CORREÇÃO PRINCIPAL DAS OBRAS ===== */
+  .info-overlay {
+    position: relative;        /* ⬅️ sai de cima da imagem */
+    background: transparent;   /* ⬅️ remove fundo escuro */
+    padding: 0.75rem 0;        /* ⬅️ padding menor */
+  }
 
-        .map-wrapper {
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(0, 188, 112, 0.2);
-        }
+  .location-badge {
+    position: static;          /* ⬅️ não flutua mais */
+    display: inline-block;
+    font-size: 0.65rem;        /* ⬅️ menor */
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 0.3rem;
+  }
 
-        .map-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+  .project-title {
+    font-size: 1rem;           /* ⬅️ título menor */
+    line-height: 1.2;
+  }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            border-top: 1px solid rgba(0, 188, 112, 0.2);
-        }
+}
 
-        .divider {
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 188, 112, 0.3), transparent);
-            margin-bottom: 2rem;
+      @media (max-width: 576px) {
+        .hero-logo img {
+          max-width: 90%;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .cta-btn {
+          padding: 0.875rem 2rem;
+          font-size: 0.95rem;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        @keyframes scroll {
-            0% { opacity: 1; transform: translateY(0); }
-            100% { opacity: 0; transform: translateY(12px); }
-        }
-
-        /* Responsive */
-        @media (max-width: 1440px) {
-            .hero-logo img {
-                max-width: 550px;
-            }
-            .hero h1 {
-                font-size: clamp(1.8rem, 4.5vw, 3rem);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .hero-logo img {
-                max-width: 450px;
-            }
-            .hero h1 {
-                font-size: clamp(1.6rem, 4vw, 2.5rem);
-            }
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .dots {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            .logo-text {
-                display: none;
-            }
-            .about-text-section {
-                text-align: center;
-            }
-            .quote-icon {
-                margin-left: 0;
-            }
-            .carousel-container {
-                gap: 0.5rem;
-            }
-            .nav-btn {
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-logo img {
-                max-width: 90%;
-            }
-            .cta-btn {
-                padding: 0.875rem 2rem;
-                font-size: 0.95rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header id="header">
-        <div class="header-wrapper">
-            <div class="logo-section">
-                <div class="logo-box">
-                    <img src="logoheadersimples.png" alt="SP Engenharia">
-                </div>
-                <div class="logo-text">
-                    <span class="company-name">SP Engenharia Civil</span>
-                    <span class="tagline">Excelência em Construção</span>
-                </div>
-            </div>
-
-            <nav>
-                <a href="#sobre">Sobre Nós</a>
-                <a href="#obras">Obras</a>
-                <a href="#contato">Contato</a>
-            </nav>
-
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <span class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-            </button>
+      <div class="header-wrapper">
+        <div class="logo-section">
+          <div class="logo-box">
+            <img src="logoheadersimples.png" alt="SP Engenharia" />
+          </div>
+          <div class="logo-text">
+            <span class="company-name">SP Engenharia Civil</span>
+            <span class="tagline">Excelência em Construção</span>
+          </div>
         </div>
+
+        <nav>
+          <a href="#sobre">Sobre Nós</a>
+          <a href="#obras">Obras</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <span class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
     </header>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#sobre" onclick="toggleMobileMenu()">Sobre Nós</a>
+      <a href="#obras" onclick="toggleMobileMenu()">Obras</a>
+      <a href="#contato" onclick="toggleMobileMenu()">Contato</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="imgfirstpage.png" alt="SP Engenharia Civil">
-            </div>
-            <h1>
-                Construindo o futuro com
-                <span class="highlight">inovação e qualidade</span>
-            </h1>
-            <p>Excelência em engenharia civil, compromisso com resultados excepcionais</p>
-            <a href="https://wa.me/5544999543562?text=Olá,%20gostaria%20de%20mais%20informações!" target="_blank" class="cta-btn">
-                <span>Entre em Contato</span>
-                <span>→</span>
-            </a>
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="imgfirstpage.png" alt="SP Engenharia Civil" />
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
+        <h1>
+          Construindo o futuro com
+          <span class="highlight">inovação e qualidade</span>
+        </h1>
+        <p>
+          Excelência em engenharia civil, compromisso com resultados
+          excepcionais
+        </p>
+        <a
+          href="https://wa.me/5544999543562?text=Olá,%20gostaria%20de%20mais%20informações!"
+          target="_blank"
+          class="cta-btn"
+        >
+          <span>Entre em Contato</span>
+          <span>→</span>
+        </a>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
         </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="sobre">
-        <div class="about-bg"></div>
-        <div class="section-wrapper">
-            <div class="section-header">
-                <span class="badge">Conheça-nos</span>
-                <h2 class="section-title">Sobre Nós</h2>
-                <div class="title-underline"></div>
-            </div>
-
-            <div class="about-content">
-                <div class="about-image-section">
-                    <div class="about-image-wrapper">
-                        <img id="aboutImage" src="Carrossel1.jpg" alt="Sobre Nós">
-                    </div>
-                </div>
-
-                <div class="about-text-section">
-                    <div class="quote-icon">"</div>
-                    <p class="about-text" id="aboutText">
-                        Transformamos sonhos em realidade através da excelência em engenharia civil
-                    </p>
-                    <div class="dots" id="aboutDots"></div>
-                </div>
-            </div>
+      <div class="about-bg"></div>
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="badge">Conheça-nos</span>
+          <h2 class="section-title">Sobre Nós</h2>
+          <div class="title-underline"></div>
         </div>
+
+        <div class="about-content">
+          <div class="about-image-section">
+            <div class="about-image-wrapper">
+              <img id="aboutImage" src="Carrossel1.jpg" alt="Sobre Nós" />
+            </div>
+          </div>
+
+          <div class="about-text-section">
+            <div class="quote-icon">"</div>
+            <p class="about-text" id="aboutText">
+              Transformamos sonhos em realidade através da excelência em
+              engenharia civil
+            </p>
+            <div class="dots" id="aboutDots"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Works Section -->
     <section id="obras">
-        <div class="works-bg"></div>
-        <div class="section-wrapper">
-            <div class="section-header">
-                <span class="badge">Portfólio</span>
-                <h2 class="section-title">Nossas Obras</h2>
-                <div class="title-underline"></div>
-                <p style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem; font-size: 1.125rem;">
-                    Projetos executados com excelência e compromisso
-                </p>
-            </div>
-
-            <div class="carousel-wrapper">
-                <div class="carousel-container">
-                    <button class="nav-btn" onclick="prevWork()">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-
-                    <div class="carousel-image-container">
-                        <div class="carousel-image-wrapper">
-                            <img id="workImage" src="AmpliacaoLavanderia1.jpg" alt="Obra">
-                            <div class="info-overlay">
-                                <div class="location-badge">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span id="workLocation">Condomínio Águas do Porto Rico - Porto Rico, PR</span>
-                                </div>
-                                <h3 class="project-title" id="workTitle">Ampliação de Lavanderia e Cozinha</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button class="nav-btn" onclick="nextWork()">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-
-                <div class="dots" id="workDots"></div>
-
-                <div class="counter">
-                    <span class="current" id="workCounter">1</span>
-                    <span> / </span>
-                    <span id="workTotal">10</span>
-                </div>
-            </div>
+      <div class="works-bg"></div>
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="badge">Portfólio</span>
+          <h2 class="section-title">Nossas Obras</h2>
+          <div class="title-underline"></div>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              margin-top: 1rem;
+              font-size: 1.125rem;
+            "
+          >
+            Projetos executados com excelência e compromisso
+          </p>
         </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-container">
+            <button class="nav-btn" onclick="prevWork()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="carousel-image-container">
+              <div class="carousel-image-wrapper">
+                <img id="workImage" src="AmpliacaoLavanderia1.jpg" alt="Obra" />
+                <div class="info-overlay">
+                  <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="workLocation"
+                      >Condomínio Águas do Porto Rico - Porto Rico, PR</span
+                    >
+                  </div>
+                  <h3 class="project-title" id="workTitle">
+                    Ampliação de Lavanderia e Cozinha
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            <button class="nav-btn" onclick="nextWork()">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="dots" id="workDots"></div>
+
+          <div class="counter">
+            <span class="current" id="workCounter">1</span>
+            <span> / </span>
+            <span id="workTotal">10</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contato">
-        <div class="section-wrapper">
-            <div class="section-header">
-                <span class="badge">Fale Conosco</span>
-                <h2 class="section-title">Contato</h2>
-                <div class="title-underline"></div>
-                <p style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem; font-size: 1.125rem;">
-                    Estamos prontos para transformar seus projetos em realidade
-                </p>
-            </div>
-
-            <div class="contact-content">
-                <div>
-                    <div class="contact-group" style="margin-bottom: 3rem;">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #00BC70; margin-bottom: 0.75rem;">
-                            Entre em Contato
-                        </h3>
-                        <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 1.5rem;">
-                            Envie uma mensagem pelo WhatsApp ou E-mail
-                        </p>
-
-                        <a href="mailto:spengenharia25@outlook.com" class="contact-item">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">E-mail</span>
-                                <span class="contact-value">spengenharia25@outlook.com</span>
-                            </div>
-                        </a>
-
-                        <a href="tel:+5544999543562" class="contact-item">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Telefone</span>
-                                <span class="contact-value">(44) 99954-3562</span>
-                            </div>
-                        </a>
-
-                        <a href="https://www.instagram.com/sp_engenhariacivil" target="_blank" class="contact-item">
-                            <div class="icon-wrapper">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Instagram</span>
-                                <span class="contact-value">@sp_engenhariacivil</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="contact-group">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #00BC70; margin-bottom: 1rem;">
-                            Nosso Endereço
-                        </h3>
-                        <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px;">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div style="font-size: 1rem; color: rgba(255, 255, 255, 0.85); line-height: 1.6;">
-                                <p style="margin: 0;">Rua Padre Antônio Lock, 850</p>
-                                <p style="margin: 0;">Jardim Bela Vista</p>
-                                <p style="margin: 0;">Mandaguari, PR - CEP 86975-000</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1909749317997!2d-51.67200422489209!3d-23.525632678824387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecbfee9ba0708f%3A0x2bccd3b258c36635!2sR.%20Padre%20Ant%C3%B4nio%20Lock%2C%20850%20-%20Jardim%20Bela%20Vista%2C%20Mandaguari%20-%20PR%2C%2086975-000!5e0!3m2!1sen!2sbr!4v1746222073859!5m2!1sen!2sbr"
-                        allowfullscreen
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização SP Engenharia Civil">
-                    </iframe>
-                </div>
-            </div>
+      <div class="section-wrapper">
+        <div class="section-header">
+          <span class="badge">Fale Conosco</span>
+          <h2 class="section-title">Contato</h2>
+          <div class="title-underline"></div>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.7);
+              margin-top: 1rem;
+              font-size: 1.125rem;
+            "
+          >
+            Estamos prontos para transformar seus projetos em realidade
+          </p>
         </div>
+
+        <div class="contact-content">
+          <div>
+            <div class="contact-group" style="margin-bottom: 3rem">
+              <h3
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  color: #00bc70;
+                  margin-bottom: 0.75rem;
+                "
+              >
+                Entre em Contato
+              </h3>
+              <p
+                style="
+                  font-size: 0.95rem;
+                  color: rgba(255, 255, 255, 0.6);
+                  margin-bottom: 1.5rem;
+                "
+              >
+                Envie uma mensagem pelo WhatsApp ou E-mail
+              </p>
+
+              <a href="mailto:spengenharia25@outlook.com" class="contact-item">
+                <div class="icon-wrapper">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <span class="contact-label">E-mail</span>
+                  <span class="contact-value">spengenharia25@outlook.com</span>
+                </div>
+              </a>
+
+              <a href="tel:+5544999543562" class="contact-item">
+                <div class="icon-wrapper">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-text">
+                  <span class="contact-label">Telefone</span>
+                  <span class="contact-value">(44) 99954-3562</span>
+                </div>
+              </a>
+
+              <a
+                href="https://www.instagram.com/sp_engenhariacivil"
+                target="_blank"
+                class="contact-item"
+              >
+                <div class="icon-wrapper">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <div class="contact-text">
+                  <span class="contact-label">Instagram</span>
+                  <span class="contact-value">@sp_engenhariacivil</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="contact-group">
+              <h3
+                style="
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  color: #00bc70;
+                  margin-bottom: 1rem;
+                "
+              >
+                Nosso Endereço
+              </h3>
+              <div
+                style="
+                  display: flex;
+                  align-items: flex-start;
+                  gap: 1rem;
+                  padding: 1rem;
+                  background: rgba(255, 255, 255, 0.02);
+                  border: 1px solid rgba(255, 255, 255, 0.05);
+                  border-radius: 12px;
+                "
+              >
+                <div class="icon-wrapper">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div
+                  style="
+                    font-size: 1rem;
+                    color: rgba(255, 255, 255, 0.85);
+                    line-height: 1.6;
+                  "
+                >
+                  <p style="margin: 0">Rua Padre Antônio Lock, 850</p>
+                  <p style="margin: 0">Jardim Bela Vista</p>
+                  <p style="margin: 0">Mandaguari, PR - CEP 86975-000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1909749317997!2d-51.67200422489209!3d-23.525632678824387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecbfee9ba0708f%3A0x2bccd3b258c36635!2sR.%20Padre%20Ant%C3%B4nio%20Lock%2C%20850%20-%20Jardim%20Bela%20Vista%2C%20Mandaguari%20-%20PR%2C%2086975-000!5e0!3m2!1sen!2sbr!4v1746222073859!5m2!1sen!2sbr"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização SP Engenharia Civil"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="divider"></div>
-        <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.5); font-weight: 300;">
-            SP Engenharia Civil - <span id="year"></span> © Todos os direitos reservados
-        </p>
+      <div class="divider"></div>
+      <p
+        style="
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.5);
+          font-weight: 300;
+        "
+      >
+        SP Engenharia Civil - <span id="year"></span> © Todos os direitos
+        reservados
+      </p>
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // About Section Carousel
-        const aboutSlides = [
-            {
-                image: 'Carrossel1.jpg',
-                text: 'Transformamos sonhos em realidade através da excelência em engenharia civil'
-            },
-            {
-                image: 'Carrossel2.jpg',
-                text: 'Inovação e qualidade em cada projeto que desenvolvemos'
-            },
-            {
-                image: 'Carrossel3.jpg',
-                text: 'Ética, confiança e transparência são nossos pilares fundamentais'
-            },
-            {
-                image: 'Carrossel4.jpg',
-                text: 'Compromisso com prazos, qualidade e satisfação do cliente'
-            }
-        ];
-
-        let currentAboutIndex = 0;
-
-        function updateAboutSlide() {
-            document.getElementById('aboutImage').src = aboutSlides[currentAboutIndex].image;
-            document.getElementById('aboutText').textContent = aboutSlides[currentAboutIndex].text;
-            
-            const dots = document.querySelectorAll('#aboutDots .dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentAboutIndex);
-            });
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
         }
+      });
 
-        function createAboutDots() {
-            const dotsContainer = document.getElementById('aboutDots');
-            aboutSlides.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.className = 'dot';
-                if (index === 0) dot.classList.add('active');
-                dot.onclick = () => {
-                    currentAboutIndex = index;
-                    updateAboutSlide();
-                };
-                dotsContainer.appendChild(dot);
-            });
-        }
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
 
-        // Auto slide about section
-        setInterval(() => {
-            currentAboutIndex = (currentAboutIndex + 1) % aboutSlides.length;
+      // About Section Carousel
+      const aboutSlides = [
+        {
+          image: "Carrossel1.jpg",
+          text: "Transformamos sonhos em realidade através da excelência em engenharia civil",
+        },
+        {
+          image: "Carrossel2.jpg",
+          text: "Inovação e qualidade em cada projeto que desenvolvemos",
+        },
+        {
+          image: "Carrossel3.jpg",
+          text: "Ética, confiança e transparência são nossos pilares fundamentais",
+        },
+        {
+          image: "Carrossel4.jpg",
+          text: "Compromisso com prazos, qualidade e satisfação do cliente",
+        },
+      ];
+
+      let currentAboutIndex = 0;
+
+      function updateAboutSlide() {
+        document.getElementById("aboutImage").src =
+          aboutSlides[currentAboutIndex].image;
+        document.getElementById("aboutText").textContent =
+          aboutSlides[currentAboutIndex].text;
+
+        const dots = document.querySelectorAll("#aboutDots .dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentAboutIndex);
+        });
+      }
+
+      function createAboutDots() {
+        const dotsContainer = document.getElementById("aboutDots");
+        aboutSlides.forEach((_, index) => {
+          const dot = document.createElement("button");
+          dot.className = "dot";
+          if (index === 0) dot.classList.add("active");
+          dot.onclick = () => {
+            currentAboutIndex = index;
             updateAboutSlide();
-        }, 5000);
+          };
+          dotsContainer.appendChild(dot);
+        });
+      }
 
-        createAboutDots();
+      // Auto slide about section
+      setInterval(() => {
+        currentAboutIndex = (currentAboutIndex + 1) % aboutSlides.length;
+        updateAboutSlide();
+      }, 5000);
 
-        // Works Section Carousel
-        const works = [
-            {
-                image: 'AmpliacaoLavanderia1.jpg',
-                title: 'Ampliação de Lavanderia e Cozinha',
-                location: 'Condomínio Águas do Porto Rico - Porto Rico, PR'
-            },
-            {
-                image: 'AmpliacaoLavanderia2.jpeg',
-                title: 'Ampliação de Lavanderia e Cozinha',
-                location: 'Condomínio Águas do Porto Rico - Porto Rico, PR'
-            },
-            {
-                image: 'CalçadaUm.jpg',
-                title: 'Construção de Calçada',
-                location: 'Fazenda Loanda - Loanda, PR'
-            },
-            {
-                image: 'CalçadaDois.jpg',
-                title: 'Construção de Calçada',
-                location: 'Fazenda Loanda - Loanda, PR'
-            },
-            {
-                image: 'Barracao1020_1.jpeg',
-                title: 'Barracão Industrial 1020m²',
-                location: 'Porto Maringá - Paraná'
-            },
-            {
-                image: 'Barracao1020_2.jpeg',
-                title: 'Barracão Industrial 1020m²',
-                location: 'Porto Maringá - Paraná'
-            },
-            {
-                image: 'Barracao1020_3.jpeg',
-                title: 'Barracão Industrial 1020m²',
-                location: 'Porto Maringá - Paraná'
-            },
-            {
-                image: 'Barracao1020_4.jpeg',
-                title: 'Barracão Industrial 1020m²',
-                location: 'Porto Maringá - Paraná'
-            },
-            {
-                image: 'BarracaoUm.jpg',
-                title: 'Construção de Barracão',
-                location: 'Fazenda Chapadão - Loanda, PR'
-            },
-            {
-                image: 'BarracaoDois.jpg',
-                title: 'Construção de Barracão',
-                location: 'Fazenda Chapadão - Loanda, PR'
-            }
-        ];
+      createAboutDots();
 
-        let currentWorkIndex = 0;
+      // Works Section Carousel
+      const works = [
+        {
+          image: "AmpliacaoLavanderia1.jpg",
+          title: "Ampliação de Lavanderia e Cozinha",
+          location: "Condomínio Águas do Porto Rico - Porto Rico, PR",
+        },
+        {
+          image: "AmpliacaoLavanderia2.jpeg",
+          title: "Ampliação de Lavanderia e Cozinha",
+          location: "Condomínio Águas do Porto Rico - Porto Rico, PR",
+        },
+        {
+          image: "CalçadaUm.jpg",
+          title: "Construção de Calçada",
+          location: "Fazenda Loanda - Loanda, PR",
+        },
+        {
+          image: "CalçadaDois.jpg",
+          title: "Construção de Calçada",
+          location: "Fazenda Loanda - Loanda, PR",
+        },
+        {
+          image: "Barracao1020_1.jpeg",
+          title: "Barracão Industrial 1020m²",
+          location: "Porto Maringá - Paraná",
+        },
+        {
+          image: "Barracao1020_2.jpeg",
+          title: "Barracão Industrial 1020m²",
+          location: "Porto Maringá - Paraná",
+        },
+        {
+          image: "Barracao1020_3.jpeg",
+          title: "Barracão Industrial 1020m²",
+          location: "Porto Maringá - Paraná",
+        },
+        {
+          image: "Barracao1020_4.jpeg",
+          title: "Barracão Industrial 1020m²",
+          location: "Porto Maringá - Paraná",
+        },
+        {
+          image: "BarracaoUm.jpg",
+          title: "Construção de Barracão",
+          location: "Fazenda Chapadão - Loanda, PR",
+        },
+        {
+          image: "BarracaoDois.jpg",
+          title: "Construção de Barracão",
+          location: "Fazenda Chapadão - Loanda, PR",
+        },
+      ];
 
-        function updateWorkSlide() {
-            document.getElementById('workImage').src = works[currentWorkIndex].image;
-            document.getElementById('workTitle').textContent = works[currentWorkIndex].title;
-            document.getElementById('workLocation').textContent = works[currentWorkIndex].location;
-            document.getElementById('workCounter').textContent = currentWorkIndex + 1;
-            
-            const dots = document.querySelectorAll('#workDots .dot');
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentWorkIndex);
-            });
-        }
+      let currentWorkIndex = 0;
 
-        function createWorkDots() {
-            const dotsContainer = document.getElementById('workDots');
-            const totalContainer = document.getElementById('workTotal');
-            totalContainer.textContent = works.length;
-            
-            works.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.className = 'dot';
-                if (index === 0) dot.classList.add('active');
-                dot.onclick = () => {
-                    currentWorkIndex = index;
-                    updateWorkSlide();
-                };
-                dotsContainer.appendChild(dot);
-            });
-        }
+      function updateWorkSlide() {
+        document.getElementById("workImage").src =
+          works[currentWorkIndex].image;
+        document.getElementById("workTitle").textContent =
+          works[currentWorkIndex].title;
+        document.getElementById("workLocation").textContent =
+          works[currentWorkIndex].location;
+        document.getElementById("workCounter").textContent =
+          currentWorkIndex + 1;
 
-        function nextWork() {
-            currentWorkIndex = (currentWorkIndex + 1) % works.length;
+        const dots = document.querySelectorAll("#workDots .dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentWorkIndex);
+        });
+      }
+
+      function createWorkDots() {
+        const dotsContainer = document.getElementById("workDots");
+        const totalContainer = document.getElementById("workTotal");
+        totalContainer.textContent = works.length;
+
+        works.forEach((_, index) => {
+          const dot = document.createElement("button");
+          dot.className = "dot";
+          if (index === 0) dot.classList.add("active");
+          dot.onclick = () => {
+            currentWorkIndex = index;
             updateWorkSlide();
-        }
+          };
+          dotsContainer.appendChild(dot);
+        });
+      }
 
-        function prevWork() {
-            currentWorkIndex = currentWorkIndex === 0 ? works.length - 1 : currentWorkIndex - 1;
-            updateWorkSlide();
-        }
+      function nextWork() {
+        currentWorkIndex = (currentWorkIndex + 1) % works.length;
+        updateWorkSlide();
+      }
 
-        createWorkDots();
+      function prevWork() {
+        currentWorkIndex =
+          currentWorkIndex === 0 ? works.length - 1 : currentWorkIndex - 1;
+        updateWorkSlide();
+      }
 
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+      createWorkDots();
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            alert('Menu mobile: clique nas opções do menu para navegar');
-        }
+      // Set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
     </script>
-</body>
+  </body>
 </html>
